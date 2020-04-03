@@ -1,4 +1,5 @@
 // April 3, 2020
+// David Espinosa
 
 /*
 Brainteaser:
@@ -22,6 +23,19 @@ Can you open the lock using these clues?
 See graphic below:
 imgur.com/a/WoQZWhS
 
+*/
+
+/*
+After solving the problem above, I challenged myself to write an algorithm that would solve it. 
+To my surprise, the algorithm produced the same number that was my answer to the brain teaser!
+
+If there are other numbers that could create the same problem, those numbers could be replaced 
+in the 'test' variables, and the algorithm should still be able to solve it.
+
+I think this algorithm could be expanded to find different sets of numbers that also work for this 
+kind of brain teaser. However, upon thinking about this more, it would have a search space of 10^15,
+as there are 15 individual digits in the given numbers, and each one would have to iterate 
+through 0 - 9. So probably only a very powerful computer could do this.
 */
 
 
@@ -212,5 +226,4 @@ class Main {
 
         return true;
     }
-    
 }
