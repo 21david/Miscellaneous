@@ -1,7 +1,41 @@
 /* In order to understand heaps better, I implemented one. This is a min heap which uses an array to store its elements
-and several methods to keep the elements in order. */
+and several methods to keep the elements in order. I used this video: youtube.com/watch?v=t0Cq6tVNRBA
 
-public class MinIntHeap {
+To run the code below, you can save it to a file named 'Main1.java' and compile and run it.
+Or you can run my repl.it version at: repl.it/@davidespinosa/Heap-Implementation#Main.java
+*/
+
+import java.util.Arrays;
+
+public class Main1 {
+	public static void main(String[] a)
+	{
+		MinIntHeap heap = new MinIntHeap();
+		
+		int[] numbers = {6, -4, -2, 0, 3, 13, 26, 12, 6, 7, 0, -20, -14, 2};
+		
+		// add all these random numbers to the heap
+		for(int n : numbers)
+			heap.add(n);
+		
+		// try to use the poll() method until the heap runs out of numbers
+		try {
+			while(true) {
+				System.out.print(heap.poll() + " ");
+			}
+		}
+		catch (IllegalStateException ex)
+		{
+			System.out.println("\nNo more numbers in the heap.");
+		}
+		
+		// Output of above code:
+		// -20 -14 -4 -2 0 0 2 3 6 6 7 12 13 26 
+		// No more numbers in the heap.
+	}
+}
+
+class MinIntHeap {
     private int capacity = 10;
     private int size = 0;
 
@@ -80,7 +114,7 @@ public class MinIntHeap {
         
         while(hasLeftChild(index)) {
             int smallerChildIndex = getLeftChildIndex(index);
-            if(hasRigthChild(index) && rightChild(index) < leftChild(index)) {
+            if(hasRightChild(index) && rightChild(index) < leftChild(index)) {
                 smallerChildIndex = getRightChildIndex(index);
             }
 
