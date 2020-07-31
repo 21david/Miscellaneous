@@ -2,6 +2,7 @@ import java.util.*;
 
 /*
 From video:  youtube.com/watch?v=zaBhtODEL0w
+(made a few minor modifications from the code in the video to make it work)
 */
 
 public class DFSAndBFS {
@@ -9,6 +10,7 @@ public class DFSAndBFS {
 	public static void main(String[] args) {
 		/* Setting up the nodes and the graph */
 		
+		// Set up the nodes
 		Graph.Node node1 = new Graph.Node(1);
 		Graph.Node node2 = new Graph.Node(2);
 		Graph.Node node3 = new Graph.Node(3);
@@ -18,6 +20,7 @@ public class DFSAndBFS {
 		Graph.Node node7 = new Graph.Node(7);
 		Graph.Node node8= new Graph.Node(8);
 		
+		// Create a graph object and fill up its lookup table with the nodes we made
 		Graph graph = new Graph();
 		graph.nodeLookup.put(1, node1);
 		graph.nodeLookup.put(2, node2);
@@ -28,6 +31,7 @@ public class DFSAndBFS {
 		graph.nodeLookup.put(7, node7);
 		graph.nodeLookup.put(8, node8);
 		
+		// add edges between the nodes
 		graph.addEdge(1,  2);
 		graph.addEdge(1,  3);
 		graph.addEdge(2,  4);
