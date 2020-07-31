@@ -83,10 +83,10 @@ public class Graph {
             // add the children
             for(Node child : node.adjacent) 
                 nextToVisit.add(child);
-                
-            // if we get to the end without finding a path, return false
-            return false;
         }
+                
+        // if we get to the end without finding a path, return false
+        return false;
     }
 }
     
