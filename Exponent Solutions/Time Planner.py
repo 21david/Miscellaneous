@@ -1,3 +1,4 @@
+# https://www.tryexponent.com/practice/prepare/time-planner
 # Solution written on September 27, 2024
 from typing import List
 def meeting_planner(slotsA: List[List[int]], slotsB: List[List[int]], dur: int) -> List[int]:
