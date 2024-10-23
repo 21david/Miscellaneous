@@ -39,7 +39,6 @@ def meeting_planner(slotsA: List[List[int]], slotsB: List[List[int]], dur: int) 
   a = b = 0
   A, B = len(slotsA), len(slotsB)
   while a < A and b < B:
-    print(slotsA[a], slotsB[b])
     overlap, length = get_overlap(slotsA[a], slotsB[b])
 
     if overlap and length >= dur:
