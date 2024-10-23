@@ -1,3 +1,4 @@
+// https://www.tryexponent.com/practice/prepare/time-planner
 // Written on October 22, 2024 after seeing the solution
 function meetingPlanner(slotsA, slotsB, dur) {
     // Two pointer approach
