@@ -1,5 +1,31 @@
 # https://www.tryexponent.com/practice/prepare/debit-card-transactions
 # SQLite
+
+/*
+1. Write a SQL query that list the first debit card opened by each cardholder. 
+Output columns: cardholder_id, name (cardholder), debit_card_id
+"Easy"
+*/
+
+select
+    c.cardholder_id,
+    c.name,
+    dc.debit_card_id
+from 'transaction' t
+join debit_card dc 
+    on t.debit_card_id = dc.debit_card_id
+join cardholder c
+    on c.cardholder_id = t.cardholder_id
+where dc.date_opened = (
+    -- get the earliest date_opened for the current cardholder
+    select min(dc_inner.date_opened)
+    from debit_card dc_inner
+    join 'transaction' t_inner
+        on t_inner.debit_card_id = dc_inner.debit_card_id
+    where t_inner.cardholder_id = c.cardholder_id
+)
+group by c.cardholder_id
+
     
 /*
 2. Write a SQL query to list each cardholder and the number of times their transactions were rejected due to an incorrect PIN entry. 
