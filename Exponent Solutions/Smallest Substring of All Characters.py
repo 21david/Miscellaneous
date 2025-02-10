@@ -1,7 +1,7 @@
 from typing import List
 
 """
-TC: O(len(str))
+TC: O(len(str) + len(arr))
 SC: O(len(arr))
 """
 import math
