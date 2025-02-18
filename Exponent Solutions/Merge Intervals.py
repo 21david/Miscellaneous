@@ -1,6 +1,7 @@
 from typing import List
 
 '''  
+Visual example:
                               [     ]
                            [    ]
                  [     ]
@@ -13,23 +14,6 @@ from typing import List
 [       ]
 [         ]
 
-intervals = [[1,3], [2,6], [8,10], [15,18]]
-intervals = [[1,6], [8,10], [15,18]]
-output: [[1,6], [8,10], [15,18]]
-
-intervals = [[1,4], [4,5]]
-output: [[1,5]]
-
-intervals = [[1,4], [2,3]]
-output: [[1,4]]
-
-intervals = [[1,2], [3,4], [5,6], [7,8]]
-output: [[1,2], [3,4], [5,6], [7,8]]
-
-
-Input: [[1, 4], [2, 5], [3, 6]]
-Expected: [[1, 6]]
-
 
 Algorithm:
 1. Sort by only the starting point
@@ -38,7 +22,6 @@ Algorithm:
 
 TC: O(NlogN)
 SC: O(N)
-'''
 '''
 def mergeIntervals(intervals: List[List[int]]) -> List[List[int]]:
     length = len(intervals)
@@ -64,9 +47,13 @@ def mergeIntervals(intervals: List[List[int]]) -> List[List[int]]:
         output.append([start, end])
 
     return output
-'''
 
-# '''
+
+'''
+Better solution without nested loops
+TC: O(NlogN)
+SC: O(N)
+'''
 def mergeIntervals(intervals: List[List[int]]) -> List[List[int]]:
     if not intervals:
         return []
@@ -86,14 +73,10 @@ def mergeIntervals(intervals: List[List[int]]) -> List[List[int]]:
         else:
             output.append(curr_interval)
 
-  
     return output
     
-    #  '''
-# debug your code below
-# [[1,4], [4,5]]
-# [[1,5]]
 
+# debug your code below
 print(mergeIntervals([[1,4]]))
-print(mergeIntervals([[1,4],[4,5]]))
+print(mergeIntervals([[1,4],[4,5]]))  # =>  [[1,5]]
 print(mergeIntervals([[1,3], [2,6], [8,10], [15,18]]))
